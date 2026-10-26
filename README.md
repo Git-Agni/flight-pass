@@ -2,7 +2,7 @@
 
 A contact swap for events that people want to finish. A guest scans your QR code, types their name and email, and rides a rocket from Earth past the Moon, round the Sun and down onto Mars. They land on a boarding pass with your links and your contact card, and you get their details.
 
-![Boarding, the flight, and the pass](docs/preview.png)
+![Boarding, the flight, and the pass](docs/preview.jpg)
 
 We built this for our own conference trips at [Agniverse](https://agniverse.co). The live one is [fly.agniverse.co](https://fly.agniverse.co). This repo is the same engine with our brand, our people and our backend taken out, so you can fork it and fly your own.
 

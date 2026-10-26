@@ -28,7 +28,8 @@ const config: FlightConfig = {
       links: [
         { label: "Ada on X", href: "https://x.com/example", icon: "x" },
         { label: "Ada on LinkedIn", href: "https://www.linkedin.com/in/example", icon: "linkedin" },
-        { label: "What we build", href: "https://example.com", emoji: "🚀" },
+        { label: "What we build", href: "https://example.com", icon: "link" },
+        // or any emoji: { label: "...", href: "...", emoji: "🚀" }
       ],
     },
     grace: {
