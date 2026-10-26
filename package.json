@@ -1,0 +1,28 @@
+{
+  "name": "flight-pass",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Swap contacts at events with a boarding pass and a short flight through space. Next.js + three.js.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "15.5.27",
+    "qrcode-generator": "^1.4.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "server-only": "^0.0.1",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.185.4",
+    "typescript": "^5"
+  }
+}
