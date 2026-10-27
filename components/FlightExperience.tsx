@@ -486,7 +486,6 @@ export default function FlightExperience({
       if (running || !form || !nameInput) return;
       const email = (q<HTMLInputElement>("emailInput")).value.trim();
       const building = (q<HTMLInputElement>("buildingInput")).value.trim();
-      const company = (form.elements.namedItem("company") as HTMLInputElement)?.value ?? "";
       const errEl = q("err");
       if (!nameInput.value.trim()) { errEl.textContent = "Enter your name."; return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = "Enter a valid email."; return; }
@@ -501,7 +500,7 @@ export default function FlightExperience({
       startJourney();
       fetch("/api/board", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: nameInput.value.trim(), email, building, host: hostSlug, event: event.tag, company }),
+        body: JSON.stringify({ name: nameInput.value.trim(), email, building, host: hostSlug, event: event.tag }),
       }).catch(() => { /* lead capture is best-effort from the client; the pass still shows */ });
     };
     if (form) form.addEventListener("submit", onSubmit);
@@ -650,9 +649,6 @@ export default function FlightExperience({
             <div className="bars" id="stubBars" />
           </div>
           <form id="form" autoComplete="off" noValidate>
-            <div className="hp" aria-hidden="true">
-              <label>Company<input type="text" name="company" tabIndex={-1} autoComplete="off" /></label>
-            </div>
             <input className="field" id="nameInput" type="text" inputMode="text" autoComplete="name" placeholder="your name" maxLength={80} aria-label="your name" />
             <input className="field" id="emailInput" type="email" inputMode="email" autoComplete="email" placeholder="your email" maxLength={254} aria-label="your email" />
             <textarea className="field" id="buildingInput" rows={2} placeholder="what are you building? (optional)" maxLength={200} aria-label="what are you building" />

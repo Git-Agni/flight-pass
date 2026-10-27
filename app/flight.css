@@ -135,7 +135,6 @@ html, body { margin: 0; padding: 0; background: #05060a; color: #f5f3ff; }
 .fly-root .stub .bars i { display: block; }
 
 .fly-root form { margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding-top: 16px; }
-.fly-root .hp { position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden; }
 /* text inputs get a neutral, clean focus: no glow, no accent border. */
 .fly-root .field { width: 100%; border-radius: 11px; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.34); padding: 13px 15px; color: #fff; font-size: 15px; font-family: var(--body); outline: none; transition: border-color 0.15s; }
 .fly-root .field::placeholder { color: rgba(245, 243, 255, 0.72); }
