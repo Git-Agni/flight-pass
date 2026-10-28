@@ -10,10 +10,11 @@ export const dynamic = "force-dynamic";
 
 /**
  * Boarding capture. POST only, in this order:
- *   1. honeypot filled -> a decoy 200 (bots learn nothing)
- *   2. 5 per minute per IP -> 429
- *   3. validate -> 400
- *   4. answer with the pass token at once; hand the lead to every configured
+ * No hidden honeypot: browsers autofill hidden fields, and a decoy 200 would
+ * drop a real guest's lead while the flight and pass still play.
+ *   1. 5 per minute per IP -> 429
+ *   2. validate -> 400
+ *   3. answer with the pass token at once; hand the lead to every configured
  *      adapter after the response (lib/leads), so the flight never waits.
  */
 export async function POST(req: NextRequest) {
@@ -22,10 +23,6 @@ export async function POST(req: NextRequest) {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "Bad JSON" }, { status: 400 });
-  }
-
-  if (String(body.company ?? "").trim()) {
-    return NextResponse.json({ pass_id: "decoy" });
   }
 
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "anon";

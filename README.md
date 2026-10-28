@@ -14,7 +14,7 @@ We built this for our own conference trips at [Agniverse](https://agniverse.co).
 - **The boarding pass.** Their name, a QR code of the pass link, your links, a "save contact" button that downloads a vCard, a "share your pass" button that renders a 1080x1350 PNG, and a replay.
 - **Pass links with no database.** `/p/<token>` carries the name, host, event and date in the URL itself (never the email), so every pass link works even if you store nothing.
 - **Lead adapters you switch on with env vars.** Webhook, Supabase, Customer.io and Resend. Any mix, or none.
-- **Spam basics.** A hidden honeypot field and a 5 per minute per IP limit.
+- **Spam basics.** A 5 per minute per IP limit. No hidden honeypot field: browsers autofill hidden fields, and a fake success would silently drop a real guest's lead.
 
 ## Quick start
 
