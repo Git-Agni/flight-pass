@@ -115,4 +115,4 @@ The "made with flight-pass by Agniverse" line under the pass is on by default. T
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE). Third-party model credits are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
